@@ -3,276 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jailson Nascimento | Desenvolvedor Front-End</title>
+  <meta name="theme-color" content="#153f2e">
+  <title>Correa Agro | Gestão Comercial</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="Ir para o início">
-      <span class="brand-mark">CV</span>
-      <span>Jailson Nascimento</span>
-    </a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M24 39c-8-5-12-12-12-20 7 0 11 2 14 6 1-7 5-12 13-16 2 13-2 22-13 28"/><path d="M8 38c9-1 18-5 27-15"/></svg>
+        </span>
+        <span><strong>Correa</strong><small>Agronegócios</small></span>
+      </div>
 
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="#solucoes">Soluções</a>
-      <a href="#experiencia">Prova</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+      <nav class="menu" aria-label="Menu principal">
+        <p>Visão geral</p>
+        <button class="menu-item active" data-page="dashboard"><span data-icon="dashboard"></span>Dashboard</button>
+        <p>Comercial</p>
+        <button class="menu-item" data-page="contatos"><span data-icon="users"></span>Contatos</button>
+        <button class="menu-item" data-page="produtos"><span data-icon="box"></span>Produtos</button>
+        <button class="menu-item" data-page="orcamentos"><span data-icon="file"></span>Orçamentos<span class="menu-badge">8</span></button>
+        <button class="menu-item" data-page="vendas"><span data-icon="cart"></span>Vendas</button>
+        <button class="menu-item" data-page="fretes"><span data-icon="truck"></span>Fretes</button>
+        <p>Gestão</p>
+        <button class="menu-item" data-page="financeiro"><span data-icon="wallet"></span>Financeiro</button>
+        <button class="menu-item" data-page="relatorios"><span data-icon="chart"></span>Relatórios</button>
+      </nav>
 
-  <main>
-    <section id="inicio" class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-inner">
-        <div class="hero-content reveal">
-          <p class="eyebrow">Currículo em formato landing page</p>
-          <h1>Jailson Nascimento</h1>
-          <p class="hero-role">Desenvolvedor Front-End, Analista de Sistemas e criador de soluções digitais para negócios que precisam de presença, clareza e eficiência.</p>
-          <p class="impact">Transformo ideias em experiências digitais claras, bonitas e eficientes.</p>
+      <div class="sidebar-footer">
+        <span class="avatar">JN</span>
+        <span><strong>Jailson Nascimento</strong><small>Administrador</small></span>
+        <button aria-label="Mais opções">•••</button>
+      </div>
+    </aside>
 
-          <div class="hero-actions">
-            <a class="primary-action" href="#projetos">Ver projetos</a>
-            <a class="secondary-action" href="mailto:seuemail@email.com">Entrar em contato</a>
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu"><span data-icon="menu"></span></button>
+        <div class="search">
+          <span data-icon="search"></span>
+          <input id="searchInput" type="search" placeholder="Buscar clientes, produtos ou pedidos..." aria-label="Buscar">
+          <kbd>⌘ K</kbd>
+        </div>
+        <div class="top-actions">
+          <button class="icon-button notification" aria-label="Notificações"><span data-icon="bell"></span><i></i></button>
+          <div class="user">
+            <span class="avatar">JN</span>
+            <span><strong>Jailson</strong><small>Administrador</small></span>
+            <span data-icon="chevron"></span>
           </div>
+        </div>
+      </header>
 
-          <div class="hero-stats" aria-label="Resumo profissional">
+      <div class="page">
+        <section class="page-view active" id="dashboard">
+          <div class="page-heading">
             <div>
-              <strong>3+</strong>
-              <span>anos evoluindo sistemas e interfaces</span>
+              <p class="eyebrow">Sexta-feira, 24 de julho</p>
+              <h1>Bom dia, Jailson!</h1>
+              <p>Acompanhe o desempenho do seu negócio em tempo real.</p>
             </div>
-            <div>
-              <strong>Front-End</strong>
-              <span>HTML, CSS, JavaScript e boas práticas</span>
-            </div>
-            <div>
-              <strong>Suporte + Dev</strong>
-              <span>visão técnica com foco no usuário</span>
-            </div>
+            <button class="primary-button" id="newSale"><span data-icon="plus"></span>Nova venda</button>
           </div>
-        </div>
 
-        <div class="profile-frame reveal">
-          <img src="Foto Perfil.png" alt="Foto de perfil de Jailson Nascimento">
-        </div>
-      </div>
-    </section>
+          <div class="metrics">
+            <article class="metric-card">
+              <div class="metric-top"><span class="metric-icon green" data-icon="money"></span><span class="trend up">↗ 12,5%</span></div>
+              <p>Vendas no mês</p><strong>R$ 184.750,00</strong><small>R$ 164.200 no mês anterior</small>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top"><span class="metric-icon gold" data-icon="receipt"></span><span class="trend up">↗ 8,2%</span></div>
+              <p>Pedidos realizados</p><strong>126</strong><small>116 no mês anterior</small>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top"><span class="metric-icon blue" data-icon="users"></span><span class="trend up">↗ 5,4%</span></div>
+              <p>Clientes ativos</p><strong>284</strong><small>15 novos este mês</small>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top"><span class="metric-icon orange" data-icon="target"></span><span class="trend down">↘ 2,1%</span></div>
+              <p>Ticket médio</p><strong>R$ 1.466,27</strong><small>R$ 1.498 no mês anterior</small>
+            </article>
+          </div>
 
-    <section id="solucoes" class="section">
-      <div class="section-heading reveal">
-        <span class="section-icon" data-icon="sparkles"></span>
-        <div>
-          <p class="eyebrow">O que eu entrego</p>
-          <h2>Soluções digitais com visual limpo e objetivo prático</h2>
-          <p class="section-copy">Uma landing page precisa vender uma ideia rápido. Este currículo segue essa lógica: mostra valor, prova experiência e facilita o próximo contato.</p>
-        </div>
-      </div>
-
-      <div class="grid solution-grid">
-        <article class="feature-card reveal">
-          <span class="mini-icon" data-icon="monitor"></span>
-          <h3>Interfaces responsivas</h3>
-          <p>Páginas organizadas, adaptáveis ao celular e pensadas para leitura rápida.</p>
-        </article>
-
-        <article class="feature-card reveal">
-          <span class="mini-icon" data-icon="workflow"></span>
-          <h3>Processos mais eficientes</h3>
-          <p>Apoio técnico para reduzir tarefas repetitivas, documentar fluxos e melhorar rotinas.</p>
-        </article>
-
-        <article class="feature-card reveal">
-          <span class="mini-icon" data-icon="check-circle"></span>
-          <h3>Entrega com clareza</h3>
-          <p>Comunicação simples, atenção aos detalhes e foco no que resolve o problema real.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="experiencia" class="section alt-section">
-      <div class="section-heading reveal">
-        <span class="section-icon" data-icon="briefcase"></span>
-        <div>
-          <p class="eyebrow">Prova profissional</p>
-          <h2>Experiência que sustenta a entrega</h2>
-          <p class="section-copy">Atuação combinando desenvolvimento, suporte a sistemas, melhoria de processos e cuidado com a experiência de quem usa.</p>
-        </div>
-      </div>
-
-      <div class="timeline">
-        <article class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <h3>Desenvolvedor Front-End</h3>
-                <p>Empresa Exemplo</p>
+          <div class="dashboard-grid">
+            <article class="panel chart-panel">
+              <div class="panel-heading">
+                <div><h2>Desempenho de vendas</h2><p>Faturamento dos últimos 6 meses</p></div>
+                <select aria-label="Período"><option>Últimos 6 meses</option><option>Este ano</option></select>
               </div>
-              <span>2024 - Atual</span>
-            </div>
-            <p>Crio interfaces responsivas, componentes reutilizáveis e experiências web com foco em performance, acessibilidade e clareza visual.</p>
-          </div>
-        </article>
-
-        <article class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <h3>Assistente de Tecnologia</h3>
-                <p>Empresa Anterior</p>
+              <div class="chart-wrap">
+                <div class="y-axis"><span>200k</span><span>150k</span><span>100k</span><span>50k</span><span>0</span></div>
+                <div class="chart">
+                  <div class="grid-lines"></div>
+                  <svg viewBox="0 0 700 245" preserveAspectRatio="none" aria-label="Gráfico crescente de vendas">
+                    <defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f8f62" stop-opacity=".25"/><stop offset="1" stop-color="#2f8f62" stop-opacity="0"/></linearGradient></defs>
+                    <path class="area" d="M0 205 C55 190 65 165 116 170 S185 135 234 148 S315 96 350 115 S430 84 468 100 S555 48 584 72 S650 28 700 38 V245 H0Z"/>
+                    <path class="line" d="M0 205 C55 190 65 165 116 170 S185 135 234 148 S315 96 350 115 S430 84 468 100 S555 48 584 72 S650 28 700 38"/>
+                    <g class="dots"><circle cx="0" cy="205" r="5"/><circle cx="116" cy="170" r="5"/><circle cx="234" cy="148" r="5"/><circle cx="350" cy="115" r="5"/><circle cx="468" cy="100" r="5"/><circle cx="584" cy="72" r="5"/><circle cx="700" cy="38" r="5"/></g>
+                  </svg>
+                  <div class="x-axis"><span>Fev</span><span>Mar</span><span>Abr</span><span>Mai</span><span>Jun</span><span>Jul</span></div>
+                </div>
               </div>
-              <span>2022 - 2024</span>
-            </div>
-            <p>Atuei no suporte a sistemas, melhoria de processos internos, documentação técnica e automação de tarefas repetitivas.</p>
-          </div>
-        </article>
+            </article>
 
-        <article class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="card">
-            <div class="card-header">
-              <div>
-                <h3>Estagiário em Desenvolvimento</h3>
-                <p>Startup Digital</p>
+            <article class="panel goals-panel">
+              <div class="panel-heading"><div><h2>Meta mensal</h2><p>Julho de 2026</p></div><button class="more">•••</button></div>
+              <div class="goal-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="49"/><circle class="ring-value" cx="60" cy="60" r="49"/></svg><div><strong>74%</strong><span>alcançado</span></div></div>
+              <div class="goal-values"><span><small>Realizado</small><strong>R$ 184.750</strong></span><span><small>Meta</small><strong>R$ 250.000</strong></span></div>
+              <p class="goal-note"><span data-icon="spark"></span> Faltam <strong>R$ 65.250</strong> para atingir a meta</p>
+            </article>
+          </div>
+
+          <div class="bottom-grid">
+            <article class="panel orders-panel">
+              <div class="panel-heading"><div><h2>Pedidos recentes</h2><p>Últimas movimentações comerciais</p></div><button class="text-button" data-go="vendas">Ver todos <span>→</span></button></div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Pedido</th><th>Cliente</th><th>Data</th><th>Valor</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>#1048</strong></td><td><span class="client-icon">FA</span>Fazenda Alvorada</td><td>24 Jul, 09:32</td><td><strong>R$ 8.450,00</strong></td><td><span class="status paid">Pago</span></td></tr>
+                    <tr><td><strong>#1047</strong></td><td><span class="client-icon">AS</span>Agropecuária Silva</td><td>23 Jul, 16:18</td><td><strong>R$ 3.280,00</strong></td><td><span class="status pending">Pendente</span></td></tr>
+                    <tr><td><strong>#1046</strong></td><td><span class="client-icon">RV</span>Rural Vale Verde</td><td>23 Jul, 11:45</td><td><strong>R$ 12.790,00</strong></td><td><span class="status transit">Em trânsito</span></td></tr>
+                    <tr><td><strong>#1045</strong></td><td><span class="client-icon">CM</span>Cooperativa Monte</td><td>22 Jul, 14:07</td><td><strong>R$ 5.630,00</strong></td><td><span class="status paid">Pago</span></td></tr>
+                  </tbody>
+                </table>
               </div>
-              <span>2021 - 2022</span>
-            </div>
-            <p>Participei da criação de páginas web, manutenção de sistemas e testes funcionais em projetos para clientes.</p>
+            </article>
+
+            <article class="panel products-panel">
+              <div class="panel-heading"><div><h2>Produtos em destaque</h2><p>Mais vendidos no mês</p></div><button class="text-button" data-go="produtos">Ver todos</button></div>
+              <div class="product"><span class="product-art seed">🌱</span><div><strong>Sementes de Soja Premium</strong><small>48 unidades vendidas</small></div><strong>R$ 28.320</strong></div>
+              <div class="product"><span class="product-art soil">◉</span><div><strong>Fertilizante NPK 20-05-20</strong><small>36 unidades vendidas</small></div><strong>R$ 19.440</strong></div>
+              <div class="product"><span class="product-art corn">🌽</span><div><strong>Sementes de Milho Híbrido</strong><small>29 unidades vendidas</small></div><strong>R$ 15.080</strong></div>
+              <div class="product"><span class="product-art leaf">🍃</span><div><strong>Defensivo Agrícola</strong><small>24 unidades vendidas</small></div><strong>R$ 12.960</strong></div>
+            </article>
           </div>
-        </article>
+        </section>
+
+        <section class="page-view module-view" id="moduleView">
+          <div class="page-heading"><div><p class="eyebrow">Gestão comercial</p><h1 id="moduleTitle">Módulo</h1><p id="moduleDescription"></p></div><button class="primary-button"><span data-icon="plus"></span>Novo registro</button></div>
+          <article class="panel empty-state"><span id="moduleIcon" data-icon="box"></span><h2>Visão de apresentação</h2><p>Este módulo está pronto para receber os dados e regras do sistema atual em Excel, VBA e SQL.</p><button class="secondary-button" data-go="dashboard">Voltar ao dashboard</button></article>
+        </section>
       </div>
-    </section>
+    </main>
+  </div>
 
-    <section id="formacao" class="section">
-      <div class="section-heading reveal">
-        <span class="section-icon" data-icon="graduation-cap"></span>
-        <div>
-          <p class="eyebrow">Base acadêmica</p>
-          <h2>Formação e fundamentos</h2>
-          <p class="section-copy">Base técnica em sistemas, desenvolvimento web e práticas que ajudam a construir interfaces mais estáveis e fáceis de manter.</p>
-        </div>
-      </div>
-
-      <div class="grid two-columns">
-        <article class="card reveal">
-          <span class="mini-icon" data-icon="school"></span>
-          <h3>Análise e Desenvolvimento de Sistemas</h3>
-          <p>Instituição de Ensino Exemplo</p>
-          <strong>2023 - 2026</strong>
-        </article>
-
-        <article class="card reveal">
-          <span class="mini-icon" data-icon="award"></span>
-          <h3>Curso de Desenvolvimento Web</h3>
-          <p>HTML, CSS, JavaScript, Git e boas práticas de interface.</p>
-          <strong>120 horas</strong>
-        </article>
-      </div>
-    </section>
-
-    <section id="idiomas" class="section compact-section">
-      <div class="section-heading reveal">
-        <span class="section-icon" data-icon="languages"></span>
-        <div>
-          <p class="eyebrow">Comunicação</p>
-          <h2>Idiomas para colaborar melhor</h2>
-        </div>
-      </div>
-
-      <div class="language-list">
-        <article class="language reveal">
-          <div>
-            <h3>Português</h3>
-            <p>Nativo</p>
-          </div>
-          <div class="progress" aria-label="Português nativo">
-            <span style="width: 100%"></span>
-          </div>
-        </article>
-
-        <article class="language reveal">
-          <div>
-            <h3>Inglês</h3>
-            <p>Intermediário</p>
-          </div>
-          <div class="progress" aria-label="Inglês intermediário">
-            <span style="width: 68%"></span>
-          </div>
-        </article>
-
-        <article class="language reveal">
-          <div>
-            <h3>Espanhol</h3>
-            <p>Básico</p>
-          </div>
-          <div class="progress" aria-label="Espanhol básico">
-            <span style="width: 42%"></span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="projetos" class="section alt-section">
-      <div class="section-heading reveal">
-        <span class="section-icon" data-icon="rocket"></span>
-        <div>
-          <p class="eyebrow">Portfólio</p>
-          <h2>Projetos apresentados como casos de uso</h2>
-          <p class="section-copy">Exemplos de interfaces que mostram organização visual, estrutura de conteúdo e foco na experiência final.</p>
-        </div>
-      </div>
-
-      <div class="grid project-grid">
-        <article class="project-card reveal">
-          <div class="project-cover cover-one">
-            <span data-icon="layout-dashboard"></span>
-          </div>
-          <h3>Dashboard de Vendas</h3>
-          <p>Interface para acompanhar indicadores, metas e desempenho comercial em tempo real.</p>
-          <a href="#" aria-label="Abrir projeto Dashboard de Vendas">Ver projeto</a>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-cover cover-two">
-            <span data-icon="shopping-bag"></span>
-          </div>
-          <h3>Loja Virtual</h3>
-          <p>Página responsiva com vitrine de produtos, filtros, carrinho visual e detalhes de compra.</p>
-          <a href="#" aria-label="Abrir projeto Loja Virtual">Ver projeto</a>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-cover cover-three">
-            <span data-icon="clipboard-check"></span>
-          </div>
-          <h3>Gerenciador de Tarefas</h3>
-          <p>Aplicação simples para organizar tarefas, prioridades e prazos com visual limpo.</p>
-          <a href="#" aria-label="Abrir projeto Gerenciador de Tarefas">Ver projeto</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="contato" class="cta-section">
-      <div class="cta-inner reveal">
-        <p class="eyebrow">Próximo passo</p>
-        <h2>Vamos conversar sobre uma oportunidade ou projeto?</h2>
-        <p>Estou disponível para conversar sobre desenvolvimento front-end, suporte a sistemas, melhoria de processos e soluções digitais sob medida.</p>
-        <div class="hero-actions">
-          <a class="primary-action" href="mailto:seuemail@email.com">Enviar e-mail</a>
-          <a class="secondary-action dark-action" href="#inicio">Voltar ao topo</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>Jailson Nascimento | seuemail@email.com | LinkedIn: /in/seuperfil</p>
-  </footer>
-
+  <div class="toast" id="toast"><span data-icon="check"></span><div><strong>Demonstração visual</strong><p>A ação foi simulada com sucesso.</p></div></div>
+  <div class="scrim" id="scrim"></div>
   <script src="script.js"></script>
 </body>
 </html>
